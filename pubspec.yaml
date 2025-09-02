@@ -1,0 +1,28 @@
+name: adbrix_plugin
+description: "This is official Flutter plugin for Adbrix 2.0 SDK."
+
+version: 1.0.6
+homepage: "https://adbrix.gitbook.io"
+
+environment:
+  sdk: ">=2.12.0 <3.0.0"
+  flutter: ">=1.20.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^5.0.0
+
+
+flutter:
+  plugin:
+    platforms:
+      android:
+        package: com.igaworks.adbrix.flutter
+        pluginClass: AdbrixPlugin
+      ios:
+        pluginClass: AdbrixPlugin
