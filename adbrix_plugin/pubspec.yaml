@@ -1,7 +1,7 @@
 name: adbrix_plugin
 description: "This is official Flutter plugin for Adbrix 2.0 SDK."
 
-version: 1.1.0
+version: 1.1.1
 homepage: "https://adbrix.gitbook.io"
 
 environment:

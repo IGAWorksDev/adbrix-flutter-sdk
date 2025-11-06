@@ -17,7 +17,7 @@ This is official Flutter plugin for Adbrix 2.0 SDK.
   s.public_header_files = 'Classes/**/*.h'
 
   s.dependency 'Flutter'
-  s.dependency 'adbrix2.0', '3.0.3'
+  s.dependency 'adbrix2.0', '3.1.0'
   
   s.platform = :ios, '12.0'
   
