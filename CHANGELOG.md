@@ -2,6 +2,21 @@
 <summary>EN</summary>
 
 
+
+## 1.1.0 (2025-11-06)
+
+##### Added
+- SKAN [iOS]
+- Added support for SKAdNetwork (SKAN). [iOS]
+
+##### Versions
+
+- **Android**
+  - Adbrix Android SDK 3.0.7
+- **iOS**
+  - Adbrix iOS SDK 3.1.0
+
+
 ## 1.0.6 (2025-09-02)
 
 ##### Fixed
@@ -118,6 +133,20 @@
 
 <details open>
 <summary>KO</summary>
+
+
+
+## 1.1.0 (2025-11-06)
+
+##### 추가됨
+- SKAdNetwork(SKAN) 기능이 추가되었습니다. [iOS]
+
+##### 버전 정보
+
+- **Android**
+  - Adbrix Android SDK 3.0.7
+- **iOS**
+  - Adbrix iOS SDK 3.1.0
 
 
 ## 1.0.6 (2025-09-02)

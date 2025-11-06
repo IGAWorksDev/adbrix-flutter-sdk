@@ -4,7 +4,7 @@
 #
 Pod::Spec.new do |s|
   s.name             = 'adbrix_plugin'
-  s.version          = '1.0.6'
+  s.version          = '1.1.0'
   s.summary          = 'This is official Flutter plugin for Adbrix 2.0 SDK.'
   s.description      = <<-DESC
 This is official Flutter plugin for Adbrix 2.0 SDK.
