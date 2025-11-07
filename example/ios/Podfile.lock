@@ -1,0 +1,41 @@
+PODS:
+  - adbrix2.0 (3.0.3)
+  - adbrix_plugin (1.0.6):
+    - adbrix2.0 (= 3.0.3)
+    - Flutter
+  - Flutter (1.0.0)
+  - integration_test (0.0.1):
+    - Flutter
+  - permission_handler_apple (9.3.0):
+    - Flutter
+
+DEPENDENCIES:
+  - adbrix_plugin (from `.symlinks/plugins/adbrix_plugin/ios`)
+  - Flutter (from `Flutter`)
+  - integration_test (from `.symlinks/plugins/integration_test/ios`)
+  - permission_handler_apple (from `.symlinks/plugins/permission_handler_apple/ios`)
+
+SPEC REPOS:
+  trunk:
+    - adbrix2.0
+
+EXTERNAL SOURCES:
+  adbrix_plugin:
+    :path: ".symlinks/plugins/adbrix_plugin/ios"
+  Flutter:
+    :path: Flutter
+  integration_test:
+    :path: ".symlinks/plugins/integration_test/ios"
+  permission_handler_apple:
+    :path: ".symlinks/plugins/permission_handler_apple/ios"
+
+SPEC CHECKSUMS:
+  adbrix2.0: f306c4fcd4c356c6bd6dac62ba02662411e69383
+  adbrix_plugin: 254eda0fc7ee3ebf52e07e8dad7091e85ec08f58
+  Flutter: cabc95a1d2626b1b06e7179b784ebcf0c0cde467
+  integration_test: 252f60fa39af5e17c3aa9899d35d908a0721b573
+  permission_handler_apple: 9878588469a2b0d0fc1e048d9f43605f92e6cec2
+
+PODFILE CHECKSUM: 53171eb2543eef6c69b7164da535795c71ca07e7
+
+COCOAPODS: 1.16.2

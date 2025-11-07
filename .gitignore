@@ -1,0 +1,51 @@
+# Dart & Flutter
+.dart_tool/
+.packages
+.pub-cache/
+build/
+flutter_*.png
+coverage/
+
+# IDEs
+.idea/
+*.iml
+.vscode/
+
+# macOS
+.DS_Store
+
+# iOS / macOS
+ios/Flutter/ephemeral/
+ios/Pods/
+ios/Podfile.lock
+macos/Flutter/ephemeral/
+macos/Pods/
+macos/Podfile.lock
+
+# Android
+android/.gradle/
+android/.idea/
+android/local.properties
+android/**/captures/
+android/gradlew
+android/gradlew.bat
+android/gradle/
+android/app/release/
+
+# Example app artifacts
+example/.dart_tool/
+example/build/
+example/ios/Flutter/ephemeral/
+example/ios/Pods/
+example/ios/Podfile.lock
+example/android/.gradle/
+example/android/local.properties
+example/android/app/release/
+
+# Generated
+**/GeneratedPluginRegistrant.*
+
+# Misc
+*.orig
+*.rej
+*.swp
