@@ -74,7 +74,10 @@ public class AdbrixPlugin: NSObject, FlutterPlugin, AdbrixDeferredDeepLinkDelega
                                 details: nil))
             return
         }
-        let config = args["config"] as? [String: Any] ?? [:]
+        var config = args["config"] as? [String: Any] ?? [:]
+        if config["ABLogLevel"] != nil {
+            config.removeValue(forKey: "setLog")
+        }
         
         Adbrix.shared().sdkInit(
             appkey: applicationKey,
