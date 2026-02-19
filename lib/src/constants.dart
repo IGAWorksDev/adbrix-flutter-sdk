@@ -291,7 +291,14 @@ class ABSignUpChannel {
 ///A class that contains the names of the constants for the settings of the adbrix sdk.
 class ABConfig {
   ///Show ios log or not
+  @Deprecated('Use ABConfig.iosLogLevel instead.')
   static const String iosLogEnable = "setLog";
+
+  ///iOS log level config key.
+  ///
+  ///Use this as the key in init config, and set one of [ABiOSLogLevel] values.
+  ///Setting this key enables iOS SDK logging with the specified level.
+  static const String iosLogLevel = "ABLogLevel";
 
   ///Show android log or not
   static const String androidLogEnable = "android_log_enable";
@@ -333,4 +340,15 @@ class ABiOSTrackingTimeout {
   static const int timeout60 = 60;
   static const int timeout120 = 120;
   static const int timeout180 = 180;
+}
+
+///iOS log level values for [ABConfig.iosLogLevel].
+///
+///Use these constants as the value of [ABConfig.iosLogLevel] to enable iOS SDK logging.
+class ABiOSLogLevel {
+  static const int verbose = 2;
+  static const int debug = 3;
+  static const int info = 4;
+  static const int warn = 5;
+  static const int error = 6;
 }
