@@ -4,7 +4,7 @@
 #
 Pod::Spec.new do |s|
   s.name             = 'adbrix_plugin'
-  s.version          = '1.1.0'
+  s.version          = '1.1.2'
   s.summary          = 'This is official Flutter plugin for Adbrix 2.0 SDK.'
   s.description      = <<-DESC
 This is official Flutter plugin for Adbrix 2.0 SDK.
@@ -17,7 +17,7 @@ This is official Flutter plugin for Adbrix 2.0 SDK.
   s.public_header_files = 'Classes/**/*.h'
 
   s.dependency 'Flutter'
-  s.dependency 'adbrix2.0', '3.1.0'
+  s.dependency 'adbrix2.0', '3.2.1'
   
   s.platform = :ios, '12.0'
   
