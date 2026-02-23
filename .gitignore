@@ -29,7 +29,6 @@ android/local.properties
 android/**/captures/
 android/gradlew
 android/gradlew.bat
-android/gradle/
 android/app/release/
 
 # Example app artifacts
@@ -37,7 +36,6 @@ example/.dart_tool/
 example/build/
 example/ios/Flutter/ephemeral/
 example/ios/Pods/
-example/ios/Podfile.lock
 example/android/.gradle/
 example/android/local.properties
 example/android/app/release/
