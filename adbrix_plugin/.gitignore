@@ -43,9 +43,6 @@ example/android/app/release/
 # Generated
 **/GeneratedPluginRegistrant.*
 
-# CocoaPods example (not tracked)
-example_pods/
-
 # Misc
 *.orig
 *.rej
