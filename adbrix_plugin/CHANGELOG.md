@@ -1,7 +1,36 @@
 <details open>
 <summary>EN</summary>
 
+## 2.0.0 (2026-10-28)
 
+##### Breaking Changes
+- Flutter SDK minimum version upgraded from 1.20.0 to 3.24.0
+- Dart SDK minimum version upgraded from 2.12.0 to 3.5.0
+- iOS deployment target raised from 12.0 to 15.0 (required by Xcode 27)
+
+##### Added
+- Swift Package Manager (SPM) support for iOS dependency management [iOS]
+- Package.swift file for SPM-based iOS projects
+- Added `play-services-appset` dependency for App Set ID support [Android]
+  ```groovy
+  implementation("com.google.android.gms:play-services-appset:16.0.2")
+  ```
+
+##### Changed
+- Android SDK updated to version 4.1.0
+- iOS SDK updated to version 3.2.4 (SPM) / 3.2.3 (CocoaPods)
+
+##### Notes
+- As [CocoaPods Specs repository has transitioned to Read-only mode](https://blog.cocoapods.org/CocoaPods-Specs-Repo/), Swift Package Manager (SPM) is now recommended for iOS dependency management. SPM provides the latest iOS SDK (3.2.4), while CocoaPods remains available with version 3.2.3.
+- Existing iOS projects can continue using CocoaPods or migrate to SPM.
+
+##### Versions
+
+- **Android**
+  - Adbrix Android SDK 4.1.0
+- **iOS**
+  - Adbrix iOS SDK 3.2.4 (Swift Package Manager)
+  - Adbrix iOS SDK 3.2.3 (CocoaPods)
 
 
 ## 1.1.2 (2026-02-19)
@@ -160,6 +189,38 @@
 <summary>KO</summary>
 
 
+
+
+## 2.0.0 (2026-10-28)
+
+##### 주요 변경사항 (Breaking Changes)
+- Flutter SDK 최소 버전이 1.20.0에서 3.24.0으로 업그레이드되었습니다.
+- Dart SDK 최소 버전이 2.12.0에서 3.5.0으로 업그레이드되었습니다.
+- iOS deployment target이 12.0에서 15.0으로 상향되었습니다. (Xcode 27 요구사항)
+
+##### 추가됨
+- iOS 의존성 관리를 위한 Swift Package Manager(SPM) 지원이 추가되었습니다. [iOS]
+- SPM 기반 iOS 프로젝트를 위한 Package.swift 파일 추가
+- App Set ID 지원을 위한 `play-services-appset` 의존성 추가 [Android]
+  ```groovy
+  implementation("com.google.android.gms:play-services-appset:16.0.2")
+  ```
+
+##### 변경됨
+- Android SDK가 버전 4.1.0으로 업데이트되었습니다.
+- iOS SDK가 버전 3.2.4 (SPM) / 3.2.3 (CocoaPods)으로 업데이트되었습니다.
+
+##### 주요 사항
+- [CocoaPods Specs 저장소가 Read-only 모드로 전환](https://blog.cocoapods.org/CocoaPods-Specs-Repo/)됨에 따라, iOS 의존성 관리에 Swift Package Manager(SPM) 사용을 권장합니다. SPM을 통해 최신 iOS SDK(3.2.4)를 사용할 수 있으며, CocoaPods는 버전 3.2.3까지 지원됩니다.
+- 기존 iOS 프로젝트는 CocoaPods를 계속 사용하거나 SPM으로 마이그레이션할 수 있습니다.
+
+##### 버전 정보
+
+- **Android**
+  - Adbrix Android SDK 4.1.0
+- **iOS**
+  - Adbrix iOS SDK 3.2.4 (Swift Package Manager)
+  - Adbrix iOS SDK 3.2.3 (CocoaPods)
 
 
 ## 1.1.2 (2026-02-19)
