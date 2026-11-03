@@ -1,0 +1,14 @@
+{
+  "pins" : [
+    {
+      "identity" : "adbrix-ios-sdk",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/IGAWorksDev/adbrix-ios-sdk",
+      "state" : {
+        "revision" : "29e0076934702b8815aa6a5c544d7bded69720ca",
+        "version" : "3.2.4"
+      }
+    }
+  ],
+  "version" : 2
+}
