@@ -1,0 +1,253 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 6.0.2 effective-5.10 (swiftlang-6.0.2.1.2 clang-1600.0.26.4)
+// swift-module-flags: -target arm64-apple-ios12.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-bare-slash-regex -module-name AdbrixSDK
+// swift-module-flags-ignorable: -no-verify-emitted-module-interface
+import AdServices
+import AdSupport
+import AppTrackingTransparency
+import CommonCrypto
+import CoreTelephony
+import CryptoKit
+import Foundation
+import StoreKit
+import Swift
+import SystemConfiguration
+import UIKit
+import _Concurrency
+import _StringProcessing
+import _SwiftConcurrencyShims
+import os
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc final public class Adbrix : ObjectiveC.NSObject {
+  @objc public static func shared() -> AdbrixSDK.Adbrix
+  @objc final public func sdkInit(appkey: Swift.String, secretKey: Swift.String)
+  @objc(sdkInitWithAppkey:secretKey:extraConfig:) final public func sdkInit(appkey: Swift.String, secretKey: Swift.String, extraConfig: [Swift.String : Any])
+  @objc final public func logEvent(_ name: Swift.String)
+  @objc(logEvent:withProperties:) final public func logEvent(name: Swift.String, properties: [Swift.String : Any])
+  @objc final public func setDeferredDeepLinkDelegate(_ delegate: any AdbrixSDK.AdbrixDeferredDeepLinkDelegate)
+  @objc final public func attAuthorized(_ isAuthorized: Swift.Bool)
+  @objc final public func deepLinkOpen(url: Foundation.URL)
+  @objc final public func enableSDK()
+  @objc final public func disableSDK()
+  @objc deinit
+}
+@objc @_hasMissingDesignatedInitializers @objcMembers public class AdbrixDeepLink : ObjectiveC.NSObject {
+  @objc final public let result: AdbrixSDK.AdbrixDeepLinkResult
+  @objc final public let deepLink: Swift.String?
+  @objc deinit
+}
+@objc public enum AdbrixDeepLinkResult : Swift.Int {
+  case PROCESSED = 0
+  case ORGANIC = 1
+  case TRACKING_LINK_SETTINGS_INCORRECTLY = 2
+  case NO_CONVERSION = 3
+  case ERROR = -1
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@objc @_inheritsConvenienceInitializers @objcMembers final public class ABEvent : ObjectiveC.NSObject {
+  @objc public static let LOGIN: Swift.String
+  @objc public static let LOGOUT: Swift.String
+  @objc public static let SIGN_UP: Swift.String
+  @objc public static let USE_CREDIT: Swift.String
+  @objc public static let APP_UPDATE: Swift.String
+  @objc public static let INVITE: Swift.String
+  @objc public static let PURCHASE: Swift.String
+  @objc public static let LEVEL_ACHIEVED: Swift.String
+  @objc public static let TUTORIAL_COMPLETED: Swift.String
+  @objc public static let CHARACTER_CREATED: Swift.String
+  @objc public static let STAGE_CLEARED: Swift.String
+  @objc public static let REFUND: Swift.String
+  @objc public static let ADD_TO_CART: Swift.String
+  @objc public static let ADD_TO_WISHLIST: Swift.String
+  @objc public static let PRODUCT_VIEW: Swift.String
+  @objc public static let CATEGORY_VIEW: Swift.String
+  @objc public static let REVIEW_ORDER: Swift.String
+  @objc public static let SEARCH: Swift.String
+  @objc public static let SHARE: Swift.String
+  @objc public static let VIEW_HOME: Swift.String
+  @objc public static let LIST_VIEW: Swift.String
+  @objc public static let CART_VIEW: Swift.String
+  @objc public static let PAYMENT_INFO_ADDED: Swift.String
+  @objc override dynamic public init()
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers @objcMembers final public class ABEventProperty : ObjectiveC.NSObject {
+  @objc public static let IS_SKIP: Swift.String
+  @objc public static let LEVEL: Swift.String
+  @objc public static let STAGE: Swift.String
+  @objc public static let PREV_VER: Swift.String
+  @objc public static let CURR_VER: Swift.String
+  @objc public static let KEYWORD: Swift.String
+  @objc public static let SHARING_CHANNEL: Swift.String
+  @objc public static let SIGN_CHANNEL: Swift.String
+  @objc public static let INVITE_CHANNEL: Swift.String
+  @objc public static let ORDER_ID: Swift.String
+  @objc public static let DELIVERY_CHARGE: Swift.String
+  @objc public static let PENALTY_CHARGE: Swift.String
+  @objc public static let PAYMENT_METHOD: Swift.String
+  @objc public static let DISCOUNT: Swift.String
+  @objc public static let ORDER_SALES: Swift.String
+  @objc public static let CATEGORY1: Swift.String
+  @objc public static let CATEGORY2: Swift.String
+  @objc public static let CATEGORY3: Swift.String
+  @objc public static let CATEGORY4: Swift.String
+  @objc public static let CATEGORY5: Swift.String
+  @objc public static let ITEMS: Swift.String
+  @objc public static let ITEM_PRODUCT_ID: Swift.String
+  @objc public static let ITEM_PRODUCT_NAME: Swift.String
+  @objc public static let ITEM_PRICE: Swift.String
+  @objc public static let ITEM_QUANTITY: Swift.String
+  @objc public static let ITEM_DISCOUNT: Swift.String
+  @objc public static let ITEM_CURRENCY: Swift.String
+  @objc public static let ITEM_CATEGORY1: Swift.String
+  @objc public static let ITEM_CATEGORY2: Swift.String
+  @objc public static let ITEM_CATEGORY3: Swift.String
+  @objc public static let ITEM_CATEGORY4: Swift.String
+  @objc public static let ITEM_CATEGORY5: Swift.String
+  @objc override dynamic public init()
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers @objcMembers final public class ABCurrency : ObjectiveC.NSObject {
+  @objc public static let KR: Swift.String
+  @objc public static let US: Swift.String
+  @objc public static let JP: Swift.String
+  @objc public static let EU: Swift.String
+  @objc public static let UK: Swift.String
+  @objc public static let CN: Swift.String
+  @objc public static let TW: Swift.String
+  @objc public static let HK: Swift.String
+  @objc public static let ID: Swift.String
+  @objc public static let IN: Swift.String
+  @objc public static let RU: Swift.String
+  @objc public static let TH: Swift.String
+  @objc public static let VN: Swift.String
+  @objc public static let MY: Swift.String
+  @objc override dynamic public init()
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers @objcMembers final public class ABSignUpChannel : ObjectiveC.NSObject {
+  @objc public static let KAKAO: Swift.String
+  @objc public static let NAVER: Swift.String
+  @objc public static let LINE: Swift.String
+  @objc public static let GOOGLE: Swift.String
+  @objc public static let FACEBOOK: Swift.String
+  @objc public static let TWITTER: Swift.String
+  @objc public static let WHATSAPP: Swift.String
+  @objc public static let QQ: Swift.String
+  @objc public static let WECHAT: Swift.String
+  @objc public static let USER_ID: Swift.String
+  @objc public static let ETC: Swift.String
+  @objc public static let SKT_ID: Swift.String
+  @objc public static let APPLE_ID: Swift.String
+  @objc override dynamic public init()
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers @objcMembers final public class ABInviteChannel : ObjectiveC.NSObject {
+  @objc public static let KAKAO: Swift.String
+  @objc public static let NAVER: Swift.String
+  @objc public static let LINE: Swift.String
+  @objc public static let GOOGLE: Swift.String
+  @objc public static let FACEBOOK: Swift.String
+  @objc public static let TWITTER: Swift.String
+  @objc public static let WHATSAPP: Swift.String
+  @objc public static let QQ: Swift.String
+  @objc public static let WECHAT: Swift.String
+  @objc public static let ETC: Swift.String
+  @objc override dynamic public init()
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers @objcMembers final public class ABSharingChannel : ObjectiveC.NSObject {
+  @objc public static let FACEBOOK: Swift.String
+  @objc public static let KAKAOTALK: Swift.String
+  @objc public static let KAKAOSTORY: Swift.String
+  @objc public static let LINE: Swift.String
+  @objc public static let WHATSAPP: Swift.String
+  @objc public static let QQ: Swift.String
+  @objc public static let WECHAT: Swift.String
+  @objc public static let SMS: Swift.String
+  @objc public static let EMAIL: Swift.String
+  @objc public static let COPY_URL: Swift.String
+  @objc public static let ETC: Swift.String
+  @objc override dynamic public init()
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers @objcMembers final public class ABPaymentMethod : ObjectiveC.NSObject {
+  @objc public static let CREDIT_CARD: Swift.String
+  @objc public static let BANK_TRANSFER: Swift.String
+  @objc public static let MOBILE_PAYMENT: Swift.String
+  @objc public static let ETC: Swift.String
+  @objc override dynamic public init()
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers @objcMembers final public class ABConfig : ObjectiveC.NSObject {
+  @objc public static let SET_LOG: Swift.String
+  @objc public static let TRACKING_TIMEOUT: Swift.String
+  @objc public static let LOG_LEVEL: Swift.String
+  @objc override dynamic public init()
+  @objc deinit
+}
+@objc public enum ABTimeOut : Swift.Int {
+  case _60 = 60
+  case _120 = 120
+  case _180 = 180
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@objc public enum ABLogLevel : Swift.Int {
+  case error = 6
+  case warning = 5
+  case info = 4
+  case debug = 3
+  case verbose = 2
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@objc public protocol AdbrixDeferredDeepLinkDelegate : ObjectiveC.NSObjectProtocol {
+  @objc func didReceive(deferredDeepLink: AdbrixSDK.AdbrixDeepLink)
+}
+@usableFromInline
+internal protocol _AnyDecodable {
+  var value: Any { get }
+  init<T>(_ value: T?)
+}
+extension AdbrixSDK._AnyDecodable {
+  public init(from decoder: any Swift.Decoder) throws
+}
+@usableFromInline
+internal protocol _AnyEncodable {
+  var value: Any { get }
+  init<T>(_ value: T?)
+}
+extension AdbrixSDK._AnyEncodable {
+  public func encode(to encoder: any Swift.Encoder) throws
+}
+extension AdbrixSDK._AnyEncodable {
+  public init(nilLiteral _: ())
+  public init(booleanLiteral value: Swift.Bool)
+  public init(integerLiteral value: Swift.Int)
+  public init(floatLiteral value: Swift.Double)
+  public init(extendedGraphemeClusterLiteral value: Swift.String)
+  public init(stringLiteral value: Swift.String)
+  public init(arrayLiteral elements: Any...)
+  public init(dictionaryLiteral elements: (Swift.AnyHashable, Any)...)
+}
+extension AdbrixSDK.ABLogLevel : Swift.Comparable {
+  public static func < (lhs: AdbrixSDK.ABLogLevel, rhs: AdbrixSDK.ABLogLevel) -> Swift.Bool
+}
+extension AdbrixSDK.AdbrixDeepLinkResult : Swift.Equatable {}
+extension AdbrixSDK.AdbrixDeepLinkResult : Swift.Hashable {}
+extension AdbrixSDK.AdbrixDeepLinkResult : Swift.RawRepresentable {}
+extension AdbrixSDK.ABTimeOut : Swift.Equatable {}
+extension AdbrixSDK.ABTimeOut : Swift.Hashable {}
+extension AdbrixSDK.ABTimeOut : Swift.RawRepresentable {}
+extension AdbrixSDK.ABLogLevel : Swift.Hashable {}
+extension AdbrixSDK.ABLogLevel : Swift.RawRepresentable {}

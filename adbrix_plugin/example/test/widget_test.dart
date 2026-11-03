@@ -5,23 +5,21 @@
 // gestures. You can also use WidgetTester to find child widgets in the widget
 // tree, read text, and verify that the values of widget properties are correct.
 
-import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 import 'package:adbrix_plugin_example/main.dart';
 
 void main() {
-  testWidgets('Verify Platform version', (WidgetTester tester) async {
+  testWidgets('Verify AdbrixApp renders correctly', (WidgetTester tester) async {
     // Build our app and trigger a frame.
-    await tester.pumpWidget(const MyApp());
+    await tester.pumpWidget(const AdbrixApp());
 
-    // Verify that platform version is retrieved.
-    expect(
-      find.byWidgetPredicate(
-        (Widget widget) => widget is Text &&
-                           widget.data!.startsWith('Running on:'),
-      ),
-      findsOneWidget,
-    );
+    // Verify that the app bar title is displayed.
+    expect(find.text('Adbrix Sample'), findsOneWidget);
+
+    // Verify that key buttons are present.
+    expect(find.text('Request ATT Authorization'), findsOneWidget);
+    expect(find.text('Login'), findsOneWidget);
+    expect(find.text('Purchase'), findsOneWidget);
   });
 }
