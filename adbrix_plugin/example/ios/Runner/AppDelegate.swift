@@ -3,16 +3,25 @@ import UIKit
 import adbrix_plugin
 
 @main
-@objc class AppDelegate: FlutterAppDelegate, FlutterImplicitEngineDelegate {
+@objc class AppDelegate: FlutterAppDelegate {
+    lazy var flutterEngine = FlutterEngine(name: "main")
+    
     override func application(
         _ application: UIApplication,
         didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?
     ) -> Bool {
+        flutterEngine.run()
+        GeneratedPluginRegistrant.register(with: flutterEngine)
+        
         return super.application(application, didFinishLaunchingWithOptions: launchOptions)
     }
     
-    func didInitializeImplicitFlutterEngine(_ engineBridge: FlutterImplicitEngineBridge) {
-        GeneratedPluginRegistrant.register(with: engineBridge.pluginRegistry)
+    override func application(
+        _ application: UIApplication,
+        configurationForConnecting connectingSceneSession: UISceneSession,
+        options: UIScene.ConnectionOptions
+    ) -> UISceneConfiguration {
+        return UISceneConfiguration(name: "Default Configuration", sessionRole: connectingSceneSession.role)
     }
     
     // MARK: - Deep Link Fallback (non-Scene environments)
