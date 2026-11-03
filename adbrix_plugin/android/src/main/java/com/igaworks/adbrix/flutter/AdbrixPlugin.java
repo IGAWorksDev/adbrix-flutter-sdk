@@ -87,7 +87,7 @@ public class AdbrixPlugin implements FlutterPlugin, MethodCallHandler {
       JSONObject root = new JSONObject(config);
       adbrixBridge.init(context, applicationKey, secretKey, root.toString());
     } else if (call.method.equals("blockDeferredDeepLinkLaunch")) {
-      adbrixBridge.blockDeferredDeepLinkLaunch(new AdbrixBridge.AdbrixDeferredDeepLinkCallback() {
+      adbrixBridge.blockDeferredDeepLinkLaunch(context, new AdbrixBridge.AdbrixDeferredDeepLinkCallback() {
         @Override
         public void onCallback(int resultCode, String deepLink) {
           if(deepLink != null && !deepLink.isEmpty()){
