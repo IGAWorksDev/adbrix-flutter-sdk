@@ -19,7 +19,7 @@ class _AdbrixAppState extends State<AdbrixApp> {
     super.initState();
 
     final config = <String, dynamic>{
-      ABConfig.iosLogEnable: true,
+      ABConfig.iosLogLevel: ABiOSLogLevel.verbose,
       ABConfig.androidLogEnable: true,
       ABConfig.androidLogLevel: ABAndroidLogLevel.verbose,
       ABConfig.androidCollectGoogleAdvertisingId: true,
@@ -31,6 +31,11 @@ class _AdbrixAppState extends State<AdbrixApp> {
       secretKey: '{YOUR_SECRET_KEY}',
       config: config,
     );
+    // Adbrix.initWithConfig(
+    //   applicationKey: '{YOUR_APPLICATION_KEY}',
+    //   secretKey: '{YOUR_SECRET_KEY}',
+    //   config: config,
+    // );
   }
 
   @override
@@ -64,6 +69,7 @@ class HomePage extends StatelessWidget {
       ABEventProperty.itemPrice: 5000.0,
       ABEventProperty.itemQuantity: 5,
       ABEventProperty.itemDiscount: 500.0,
+      ABEventProperty.itemCurrency: ABCurrency.krw,
     };
 
     final purchaseParams = {
@@ -80,7 +86,7 @@ class HomePage extends StatelessWidget {
 
   void _logCustomEvent() {
     Adbrix.logEvent(
-      eventName: 'abx:custom_event',
+      eventName: 'custom_event',
       properties: {
         'custom_property_1': 34000,
         'custom_property_2': 42.195,

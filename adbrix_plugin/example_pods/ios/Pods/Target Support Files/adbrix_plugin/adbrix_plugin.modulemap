@@ -1,0 +1,6 @@
+framework module adbrix_plugin {
+  umbrella header "adbrix_plugin-umbrella.h"
+
+  export *
+  module * { export * }
+}
