@@ -7,7 +7,6 @@
 - Flutter SDK minimum version upgraded from 1.20.0 to 3.24.0
 - Dart SDK minimum version upgraded from 2.12.0 to 3.5.0
 - iOS deployment target raised from 12.0 to 15.0 (required by Xcode 27)
-- CocoaPods distribution discontinued starting from this version [iOS]
 
 ##### Added
 - Swift Package Manager (SPM) support for iOS dependency management [iOS]
@@ -199,7 +198,6 @@
 - Flutter SDK 최소 버전이 1.20.0에서 3.24.0으로 업그레이드되었습니다.
 - Dart SDK 최소 버전이 2.12.0에서 3.5.0으로 업그레이드되었습니다.
 - iOS deployment target이 12.0에서 15.0으로 상향되었습니다. (Xcode 27 요구사항)
-- 본 버전부터 CocoaPods을 통한 배포가 중단됩니다. [iOS]
 
 ##### 추가됨
 - iOS 의존성 관리를 위한 Swift Package Manager(SPM) 지원이 추가되었습니다. [iOS]
