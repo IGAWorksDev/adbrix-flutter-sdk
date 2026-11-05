@@ -1,0 +1,4 @@
+framework module AdbrixSDK {
+  header "AdbrixSDK.h"
+  requires objc
+}
