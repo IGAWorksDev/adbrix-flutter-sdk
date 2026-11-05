@@ -1,23 +1,18 @@
-# adbrix_plugin_example
+# Adbrix Plugin Example
 
-Demonstrates how to use the adbrix_plugin plugin.
+Demonstrates how to use the adbrix_plugin Flutter plugin.
+
+## Requirements
+
+- Flutter SDK 3.24.0+
+- Dart SDK 3.5.0+
+- iOS 15.0+ / Android minSdkVersion 21+
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+### Prerequisites
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
-
-## Prerequisites
-
-After the initial clone from the repository, create `android/local.properties` with:
+After cloning the repository, create `android/local.properties`:
 
 ```properties
 sdk.dir=/path/to/android/sdk
@@ -25,71 +20,57 @@ flutter.sdk=/path/to/flutter
 flutter.buildMode=debug
 ```
 
-## iOS Build Testing
-
-The plugin supports both **Swift Package Manager (SPM)** and **CocoaPods**.
-
-### Switch to Swift Package Manager (SPM)
-
-**Option 1: Project-level configuration (recommended)**
-
-Remove the `enable-swift-package-manager: false` setting from `pubspec.yaml` if present:
-
-```yaml
-# pubspec.yaml
-flutter:
-  # Remove or comment out:
-  # config:
-  #   enable-swift-package-manager: false
-```
-
-**Option 2: Global configuration**
-
-```bash
-flutter config --enable-swift-package-manager
-```
-
-**Then clean and rebuild:**
+### Run the Example
 
 ```bash
 cd adbrix_plugin/example
-flutter clean
-
-# Remove CocoaPods artifacts
-cd ios
-rm -rf Pods Podfile.lock .symlinks Runner.xcworkspace
-cd ..
-
 flutter pub get
 flutter run
 ```
 
-### Switch to CocoaPods
+## iOS Build Options
 
-**Option 1: Project-level configuration (recommended)**
+The plugin supports both **Swift Package Manager (SPM)** and **CocoaPods**.
 
-Add to `pubspec.yaml`:
+> **Note:** [CocoaPods Specs repository will transition to read-only in December 2026](https://blog.cocoapods.org/CocoaPods-Specs-Repo/), so SPM is recommended.
+
+### Swift Package Manager (Default)
+
+Flutter 3.24+ uses SPM by default. No additional configuration required.
+
+```bash
+flutter clean
+flutter pub get
+flutter run
+```
+
+To explicitly enable SPM (if previously disabled):
 
 ```yaml
-# pubspec.yaml
+# pubspec.yaml - remove or comment out:
+# flutter:
+#   config:
+#     enable-swift-package-manager: false
+```
+
+### CocoaPods
+
+To use CocoaPods instead of SPM:
+
+**Step 1:** Add to `pubspec.yaml`:
+
+```yaml
 flutter:
   config:
     enable-swift-package-manager: false
 ```
 
-**Option 2: Global configuration**
+**Step 2:** Clean and rebuild:
 
 ```bash
-flutter config --no-enable-swift-package-manager
-```
-
-**Then clean and rebuild:**
-
-```bash
-cd adbrix_plugin/example
 flutter clean
 
-# Remove SPM artifacts (if exists)
+# Remove SPM artifacts if switching from SPM
 rm -rf ios/Runner.xcodeproj/project.xcworkspace/xcshareddata/swiftpm
 
 flutter pub get
@@ -97,37 +78,66 @@ cd ios && pod install && cd ..
 flutter run
 ```
 
-### Plugin Validation (CocoaPods)
+### Switching Between SPM and CocoaPods
+
+When switching dependency managers, clean build artifacts:
+
+**SPM → CocoaPods:**
+```bash
+flutter clean
+rm -rf ios/Runner.xcodeproj/project.xcworkspace/xcshareddata/swiftpm
+# Update pubspec.yaml to disable SPM
+flutter pub get
+cd ios && pod install && cd ..
+```
+
+**CocoaPods → SPM:**
+```bash
+flutter clean
+rm -rf ios/Pods ios/Podfile.lock ios/.symlinks ios/Runner.xcworkspace
+# Update pubspec.yaml to enable SPM (or remove the disable setting)
+flutter pub get
+```
+
+## Android Build
+
+```bash
+flutter clean
+flutter pub get
+flutter run
+```
+
+## Building for Release
+
+### Android App Bundle
+
+```bash
+flutter build appbundle --release
+```
+
+### iOS Archive
+
+```bash
+flutter build ios --release
+```
+
+## Plugin Validation (CocoaPods)
 
 ```bash
 cd adbrix_plugin
 pod lib lint ios/adbrix_plugin.podspec --configuration=Debug --skip-tests --use-modular-headers --use-libraries
 ```
 
-### Notes
+## SDK Versions
 
-- Flutter 3.44+ uses SPM by default
-- Flutter falls back to CocoaPods for dependencies that don't support SPM
-- Project-level configuration (`pubspec.yaml`) applies to all contributors
-- Global configuration (`flutter config`) applies only to the current user
-- [CocoaPods Specs repository becomes read-only on December 2, 2026](https://blog.cocoapods.org/CocoaPods-Specs-Repo/)
-
-## Android Build
-
-```bash
-cd adbrix_plugin/example
-flutter clean && flutter pub get
-flutter run
-```
-
-## Publish
-
-```bash
-cd adbrix_plugin/example
-flutter build appbundle --release     
-```
+| Platform | Version | Package Manager |
+|----------|---------|-----------------|
+| Android  | 4.1.0   | Gradle |
+| iOS      | 3.2.4   | Swift Package Manager |
+| iOS      | 3.2.3   | CocoaPods |
 
 ## References
 
-- [Swift Package Manager for plugin authors](https://docs.flutter.dev/packages-and-plugins/swift-package-manager/for-plugin-authors)
-- [Swift Package Manager for app developers](https://docs.flutter.dev/packages-and-plugins/swift-package-manager/for-app-developers)
+- [Adbrix Developer Guide](https://adbrix.gitbook.io/developer-guide/platform/flutter)
+- [Swift Package Manager for Flutter](https://docs.flutter.dev/packages-and-plugins/swift-package-manager/for-app-developers)
+- [Flutter iOS deployment](https://docs.flutter.dev/deployment/ios)
