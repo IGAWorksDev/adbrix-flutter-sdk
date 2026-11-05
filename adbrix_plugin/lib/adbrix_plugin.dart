@@ -1,3 +1,39 @@
+/// Adbrix Flutter plugin for mobile analytics and attribution tracking.
+///
+/// This library provides Flutter bindings for the Adbrix SDK, enabling
+/// event tracking, deep link handling, and user attribution analysis.
+///
+/// ## Getting Started
+///
+/// Initialize the SDK in your app's entry point:
+///
+/// ```dart
+/// import 'package:adbrix_plugin/adbrix_plugin.dart';
+///
+/// void main() {
+///   Adbrix.init(
+///     applicationKey: 'your_app_key',
+///     secretKey: 'your_secret_key',
+///   );
+///   runApp(MyApp());
+/// }
+/// ```
+///
+/// ## Logging Events
+///
+/// Track custom events with optional properties:
+///
+/// ```dart
+/// Adbrix.logEvent(
+///   eventName: ABEvent.purchase,
+///   properties: {
+///     ABEventProperty.orderId: 'ORDER_123',
+///     ABEventProperty.orderSales: 99.99,
+///   },
+/// );
+/// ```
+library;
+
 import 'package:flutter/services.dart';
 import 'dart:io' show Platform;
 import 'package:adbrix_plugin/src/callbacks.dart';
@@ -5,7 +41,13 @@ import 'package:adbrix_plugin/src/callbacks.dart';
 export 'src/callbacks.dart';
 export 'src/constants.dart';
 
+/// Main entry point for the Adbrix SDK.
+///
+/// Provides methods for SDK initialization, event tracking, and deep link handling.
+/// All methods are static and can be called directly on the class.
 class Adbrix {
+  Adbrix._();
+
   static const MethodChannel _channel = MethodChannel('adbrix_plugin');
 
   /// Initializes the Adbrix SDK with the provided application details, authentication keys, and configuration settings.
