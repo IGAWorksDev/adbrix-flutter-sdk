@@ -1,12 +1,27 @@
+/// Example application demonstrating the Adbrix Flutter plugin.
+///
+/// This example shows how to:
+/// - Initialize the Adbrix SDK with configuration
+/// - Request App Tracking Transparency (ATT) authorization on iOS
+/// - Log predefined events (login, purchase)
+/// - Log custom events with properties
+library;
+
 import 'package:flutter/material.dart';
 import 'package:permission_handler/permission_handler.dart';
 import 'package:adbrix_plugin/adbrix_plugin.dart';
 
+/// Entry point for the Adbrix example application.
 void main() {
   runApp(const AdbrixApp());
 }
 
+/// The root widget of the Adbrix example application.
+///
+/// This widget initializes the Adbrix SDK with the provided configuration
+/// and demonstrates various SDK features.
 class AdbrixApp extends StatefulWidget {
+  /// Creates an [AdbrixApp] widget.
   const AdbrixApp({super.key});
 
   @override
@@ -31,11 +46,6 @@ class _AdbrixAppState extends State<AdbrixApp> {
       secretKey: '{YOUR_SECRET_KEY}',
       config: config,
     );
-    // Adbrix.initWithConfig(
-    //   applicationKey: '{YOUR_APPLICATION_KEY}',
-    //   secretKey: '{YOUR_SECRET_KEY}',
-    //   config: config,
-    // );
   }
 
   @override
@@ -47,7 +57,12 @@ class _AdbrixAppState extends State<AdbrixApp> {
   }
 }
 
+/// The home page of the Adbrix example application.
+///
+/// Displays buttons for testing various Adbrix SDK features including
+/// ATT authorization requests and event logging.
 class HomePage extends StatelessWidget {
+  /// Creates a [HomePage] widget.
   const HomePage({super.key});
 
   void _requestAtt() {
