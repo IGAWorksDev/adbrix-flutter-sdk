@@ -1,7 +1,7 @@
 <details open>
 <summary>EN</summary>
 
-## 2.0.0 (2026-11-04)
+## 2.0.0 (2026-11-05)
 
 ##### Breaking Changes
 - Flutter SDK minimum version upgraded from 1.20.0 to 3.24.0
@@ -192,7 +192,7 @@
 
 
 
-## 2.0.0 (2026-11-04)
+## 2.0.0 (2026-11-05)
 
 ##### 주요 변경사항 (Breaking Changes)
 - Flutter SDK 최소 버전이 1.20.0에서 3.24.0으로 업그레이드되었습니다.
